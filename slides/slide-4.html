@@ -126,17 +126,17 @@ export function Button({ children, ...props }) {
     </div>
 </div>
 <div class="interactive-demo">
-    <h3>shadcn/ui: Variantes ilimitadas</h3>
-    <div class="theme-switcher">
-        <button class="theme-button active" onclick="switchTheme('default')">Default</button>
-        <button class="theme-button" onclick="switchTheme('gradient')">Gradient</button>
-        <button class="theme-button" onclick="switchTheme('neon')">Neon</button>
-        <button class="theme-button" onclick="switchTheme('minimal')">Minimal</button>
+    <h3 style="margin-bottom: 1rem;">shadcn/ui: Variantes ilimitadas</h3>
+    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+        <button style="padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; background-color: #f3f4f6; border: 1px solid #e5e7eb; color: #374151; transition: all 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#e5e7eb'" onmouseout="this.style.backgroundColor='#f3f4f6'">Default</button>
+        <button style="padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; background-image: linear-gradient(135deg, #6366f1, #3b82f6, #2563eb); color: white; border: none; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(59, 130, 246, 0.1)'">Gradient</button>
+        <button style="padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; background-color: #4c1d95; color: white; border: none; box-shadow: 0 0 20px #8b5cf6, inset 0 0 10px rgba(139, 92, 246, 0.5); text-shadow: 0 0 5px rgba(255,255,255,0.5); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 0 30px #8b5cf6, inset 0 0 15px rgba(139, 92, 246, 0.7)'; this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='0 0 20px #8b5cf6, inset 0 0 10px rgba(139, 92, 246, 0.5)'; this.style.transform='scale(1)'">Neon</button>
+        <button style="padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; background-color: white; border: 1px solid #e5e7eb; color: #374151; transition: all 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#f9fafb'" onmouseout="this.style.backgroundColor='white'">Minimal</button>
     </div>
-    <div class="demo-buttons" id="shadcn-demo">
-        <button class="demo-button shadcn-style">Default</button>
-        <button class="demo-button shadcn-variant">Outline</button>
-        <button class="demo-button shadcn-ghost">Ghost</button>
+    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+        <button style="padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; background-color: #2563eb; color: white; border: none; transition: all 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#1d4ed8'" onmouseout="this.style.backgroundColor='#2563eb'">Default</button>
+        <button style="padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; background-color: white; border: 2px solid #2563eb; color: #2563eb; transition: all 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#eff6ff'" onmouseout="this.style.backgroundColor='white'">Outline</button>
+        <button style="padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; background-color: transparent; border: none; color: #2563eb; transition: all 0.2s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#eff6ff'" onmouseout="this.style.backgroundColor='transparent'">Ghost</button>
     </div>
     <p><em>Personalización directa en el código fuente</em></p>
 </div>
@@ -144,14 +144,15 @@ export function Button({ children, ...props }) {
 <div class="code-demo">
 <pre>// Ejemplo: Agregando una variante "neon"
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-all",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        outline: "border border-input hover:bg-accent",
+        default: "bg-primary text-white hover:bg-primary/90",
+        outline: "border-2 border-primary text-primary hover:bg-primary/10",
+        ghost: "hover:bg-primary/10 text-primary",
         // ✨ Tu variante personalizada
-        neon: "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transform hover:scale-105"
+        neon: "bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/25 hover:shadow-violet-500/50 hover:scale-105"
       }
     }
   }
