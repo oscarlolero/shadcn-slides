@@ -1,0 +1,159 @@
+<div class="slide-header">
+    <h1 class="slide-title">Stack Tecnológico Base</h1>
+    <p class="slide-subtitle">Las tecnologías que hacen posible la magia</p>
+</div>
+<div class="slide-content">
+    <div class="feature-grid">
+        <div class="feature-card" style="border-left-color: #61dafb;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #61dafb; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">R</div>
+                <h3 style="color: #61dafb; margin: 0;">React</h3>
+            </div>
+            <p>La base de todos los componentes. Hooks, composición, y el ecosistema completo de React.</p>
+            <div class="code-demo" style="margin-top: 1rem; font-size: 0.8rem;">
+<pre>import React from 'react'
+import { useState } from 'react'
+
+export function Button({ children, ...props }) {
+  return <button {...props}>{children}</button>
+}</pre>
+            </div>
+        </div>
+
+        <div class="feature-card" style="border-left-color: #38bdf8;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #38bdf8; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">T</div>
+                <h3 style="color: #38bdf8; margin: 0;">Tailwind CSS</h3>
+            </div>
+            <p>Utility-first CSS framework. Estilos rápidos, consistentes y totalmente personalizables.</p>
+            <div class="demo-buttons" style="margin-top: 1rem;">
+                <div style="background: #dbeafe; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; font-family: monospace;">
+                    className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-card" style="border-left-color: #8b5cf6;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">R</div>
+                <h3 style="color: #8b5cf6; margin: 0;">Radix UI</h3>
+            </div>
+            <p>Componentes headless con accesibilidad perfecta. El comportamiento sin los estilos.</p>
+            <ul style="margin-top: 1rem; font-size: 0.9rem;">
+                <li>✅ ARIA compliant</li>
+                <li>✅ Keyboard navigation</li>
+                <li>✅ Focus management</li>
+                <li>✅ Screen reader support</li>
+            </ul>
+        </div>
+
+        <div class="feature-card" style="border-left-color: #f59e0b;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">L</div>
+                <h3 style="color: #f59e0b; margin: 0;">Lucide Icons</h3>
+            </div>
+            <p>Librería de iconos moderna, limpia y consistente. Perfecta para interfaces profesionales.</p>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem; align-items: center; flex-wrap: wrap;">
+                <span style="background: #fef3c7; padding: 0.5rem; border-radius: 4px;">📱</span>
+                <span style="background: #fef3c7; padding: 0.5rem; border-radius: 4px;">⚙️</span>
+                <span style="background: #fef3c7; padding: 0.5rem; border-radius: 4px;">🔍</span>
+                <span style="background: #fef3c7; padding: 0.5rem; border-radius: 4px;">❤️</span>
+            </div>
+        </div>
+
+        <div class="feature-card" style="border-left-color: #10b981;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">C</div>
+                <h3 style="color: #10b981; margin: 0;">clsx & tailwind-variants</h3>
+            </div>
+            <p>Utilidades para manejar clases condicionales y crear variantes de componentes elegantemente.</p>
+            <div class="code-demo" style="margin-top: 1rem; font-size: 0.8rem;">
+<pre>const buttonVariants = cva(
+  "px-4 py-2 rounded-md font-medium",
+  {
+    variants: {
+      variant: {
+        default: "bg-blue-500 text-white",
+        outline: "border border-blue-500 text-blue-500"
+      }
+    }
+  }
+)</pre>
+            </div>
+        </div>
+
+        <div class="feature-card" style="border-left-color: #ef4444;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">+</div>
+                <h3 style="color: #ef4444; margin: 0;">Opcionales</h3>
+            </div>
+            <p>Otros complementos útiles según tus necesidades:</p>
+            <ul style="margin-top: 1rem; font-size: 0.9rem;">
+                <li><strong>Framer Motion:</strong> Animaciones fluidas</li>
+                <li><strong>React Hook Form:</strong> Manejo de formularios</li>
+                <li><strong>Zod:</strong> Validación de schemas</li>
+                <li><strong>date-fns:</strong> Manejo de fechas</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="benefits" style="margin-top: 2rem;">
+        <h3>🔗 Cómo trabajan juntos</h3>
+        <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: center;">
+                <div>
+                    <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; margin-bottom: 0.5rem;">
+                        <strong>Radix UI</strong><br/>
+                        <small>Comportamiento + A11y</small>
+                    </div>
+                </div>
+                <div style="align-self: center; font-size: 1.5rem;">+</div>
+                <div>
+                    <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; margin-bottom: 0.5rem;">
+                        <strong>Tailwind CSS</strong><br/>
+                        <small>Estilos + Personalización</small>
+                    </div>
+                </div>
+                <div style="align-self: center; font-size: 1.5rem;">=</div>
+                <div>
+                    <div style="background: #dcfce7; padding: 1rem; border-radius: 8px; margin-bottom: 0.5rem;">
+                        <strong>ShadCN UI</strong><br/>
+                        <small>Componentes perfectos</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="interactive-demo">
+    <h3>shadcn/ui: Variantes ilimitadas</h3>
+    <div class="theme-switcher">
+        <button class="theme-button active" onclick="switchTheme('default')">Default</button>
+        <button class="theme-button" onclick="switchTheme('gradient')">Gradient</button>
+        <button class="theme-button" onclick="switchTheme('neon')">Neon</button>
+        <button class="theme-button" onclick="switchTheme('minimal')">Minimal</button>
+    </div>
+    <div class="demo-buttons" id="shadcn-demo">
+        <button class="demo-button shadcn-style">Default</button>
+        <button class="demo-button shadcn-variant">Outline</button>
+        <button class="demo-button shadcn-ghost">Ghost</button>
+    </div>
+    <p><em>Personalización directa en el código fuente</em></p>
+</div>
+
+<div class="code-demo">
+<pre>// Ejemplo: Agregando una variante "neon"
+const buttonVariants = cva(
+  "inline-flex items-center justify-center rounded-md text-sm font-medium",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        outline: "border border-input hover:bg-accent",
+        // ✨ Tu variante personalizada
+        neon: "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transform hover:scale-105"
+      }
+    }
+  }
+)</pre>
+</div>

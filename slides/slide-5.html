@@ -1,0 +1,121 @@
+<div class="slide-header">
+    <h1 class="slide-title">¿Cómo se instala?</h1>
+    <p class="slide-subtitle">Setup rápido y configuración inicial</p>
+</div>
+<div class="slide-content">
+    <div class="migration-timeline">
+        <div class="timeline-item">
+            <div class="timeline-number">1</div>
+            <div>
+                <h4>Inicializar el proyecto</h4>
+                <div class="code-demo" style="margin-top: 1rem;">
+<pre>npx shadcn-ui@latest init</pre>
+                </div>
+                <p style="margin-top: 0.5rem; color: #64748b;">Este comando configura todo lo necesario en tu proyecto existente</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <div>
+                <h4>Seleccionar configuración</h4>
+                <div class="feature-grid" style="margin-top: 1rem;">
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #3b82f6; margin-bottom: 0.5rem;">Framework</h5>
+                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
+                            <li>Next.js</li>
+                            <li>Vite</li>
+                            <li>Remix</li>
+                            <li>Gatsby</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #10b981; margin-bottom: 0.5rem;">Tailwind Config</h5>
+                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
+                            <li>CSS variables</li>
+                            <li>Base styles</li>
+                            <li>Plugin config</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #f59e0b; margin-bottom: 0.5rem;">Alias y Paths</h5>
+                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
+                            <li>@/components</li>
+                            <li>@/lib/utils</li>
+                            <li>Import paths</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h5 style="color: #8b5cf6; margin-bottom: 0.5rem;">Componentes</h5>
+                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
+                            <li>Default styles</li>
+                            <li>Color scheme</li>
+                            <li>Border radius</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <div>
+                <h4>Agregar componentes</h4>
+                <div class="code-demo" style="margin-top: 1rem;">
+<pre># Agregar componentes individuales
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add input
+npx shadcn-ui@latest add dialog
+
+# O múltiples a la vez
+npx shadcn-ui@latest add button input dialog card</pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-number">4</div>
+            <div>
+                <h4>¡Listo para usar!</h4>
+                <div class="code-demo" style="margin-top: 1rem;">
+<pre>import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+
+export function MyComponent() {
+  return (
+    <div className="space-y-4">
+      <Input placeholder="Escribe algo..." />
+      <Button>Enviar</Button>
+    </div>
+  )
+}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="benefits" style="margin-top: 2rem;">
+        <h3>📁 Estructura que se crea</h3>
+        <div class="code-demo">
+<pre>src/
+├── components/
+│   └── ui/
+│       ├── button.tsx
+│       ├── input.tsx
+│       └── dialog.tsx
+├── lib/
+│   └── utils.ts
+├── styles/
+│   └── globals.css
+└── components.json</pre>
+        </div>
+    </div>
+
+    <div class="demo-container" style="text-align: center;">
+        <h3 style="color: #10b981; margin-bottom: 1rem;">🎉 ¡Es así de simple!</h3>
+        <p style="font-size: 1.1rem; color: #64748b;">En menos de 5 minutos tienes un sistema de componentes completo y personalizable.</p>
+    </div>
+</div>

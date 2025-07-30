@@ -1,0 +1,75 @@
+<div class="slide-header">
+    <h1 class="slide-title">¿Qué es ShadCN UI?</h1>
+    <p class="slide-subtitle">No es una librería NPM, es tu propio código</p>
+</div>
+<div class="slide-content">
+    <div class="comparison-grid">
+        <div class="comparison-card shadcn">
+            <div class="card-title">
+                🧩 Filosofía "Copy & Own"
+            </div>
+            <ul>
+                <li><strong>Conjunto de componentes</strong> accesibles y estilizados</li>
+                <li><strong>Basado en Radix UI</strong> para el comportamiento</li>
+                <li><strong>Diseñado para ser copiado</strong> y modificado</li>
+                <li><strong>Estética moderna</strong> lista para usar</li>
+                <li><strong>Agnóstico a frameworks</strong> (Next.js, Vite, etc.)</li>
+            </ul>
+            
+            <div class="code-demo">
+<pre>// No instalas un paquete
+// Copias el código a tu proyecto
+npx shadcn-ui@latest add button
+
+// El código llega a tu carpeta
+// src/components/ui/button.tsx
+// ¡Y es tuyo para modificar!</pre>
+            </div>
+        </div>
+
+        <div class="comparison-card antd">
+            <div class="card-title">
+                🎯 Lo que lo hace único
+            </div>
+            <ul>
+                <li><strong>100% control del código:</strong> Vive en tu proyecto</li>
+                <li><strong>Fácil personalización:</strong> Modifica directamente</li>
+                <li><strong>Accesibilidad incluida:</strong> Radix UI bajo el capó</li>
+                <li><strong>Zero runtime deps:</strong> Solo el código que usas</li>
+                <li><strong>Composable:</strong> Combina componentes fácilmente</li>
+            </ul>
+
+            <div class="code-demo">
+<pre>// Ejemplo: Personalizando un Button
+export function Button({ className, variant, size, ...props }) {
+  return (
+    <button
+      className={cn(buttonVariants({ variant, size }), className)}
+      {...props}
+    />
+  )
+}
+
+// ¡Puedes modificar todo!</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="benefits" style="margin-top: 2rem;">
+        <h3>✨ Beneficios clave vs librerías tradicionales</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>🎨 Personalización</h4>
+                <p>Modifica estilos, comportamiento y estructura sin hacks ni overrides</p>
+            </div>
+            <div class="feature-card">
+                <h4>📦 Bundle Size</h4>
+                <p>Solo el código que realmente usas. Sin CSS o JS innecesario</p>
+            </div>
+            <div class="feature-card">
+                <h4>🔧 Mantenimiento</h4>
+                <p>No más breaking changes. Tú controlas cuándo y cómo actualizar</p>
+            </div>
+        </div>
+    </div>
+</div>

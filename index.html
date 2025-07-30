@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShadCN UI Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <div id="slide-content" class="slide">
+            <!-- El contenido de la diapositiva se cargará aquí -->
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn">←</button>
+        <button class="nav-button" id="nextBtn">→</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slideContent = document.getElementById('slide-content');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            let currentSlide = 0;
+            const totalSlides = 8; // Tenemos 11 diapositivas
+
+            async function loadSlide(slideNumber) {
+                try {
+                    const response = await fetch(`slides/slide-${slideNumber}.html`);
+                    if (!response.ok) {
+                        console.error(`Error loading slide ${slideNumber}:`, response.statusText);
+                        slideContent.innerHTML = `<div class="slide-header"><h1 class="slide-title">Error</h1><p>No se pudo cargar la diapositiva ${slideNumber}.</p></div>`;
+                        return;
+                    }
+                    const html = await response.text();
+                    slideContent.innerHTML = html;
+                    // Añadir la clase active para que se muestre la diapositiva
+                    slideContent.classList.add('active');
+                    updateNavButtons();
+                } catch (error) {
+                    console.error(`Error fetching slide ${slideNumber}:`, error);
+                    slideContent.innerHTML = `<div class="slide-header"><h1 class="slide-title">Error</h1><p>No se pudo cargar la diapositiva.</p></div>`;
+                }
+            }
+
+            function updateNavButtons() {
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides;
+            }
+
+            function showNextSlide() {
+                if (currentSlide < totalSlides) {
+                    currentSlide++;
+                    loadSlide(currentSlide);
+                }
+            }
+
+            function showPrevSlide() {
+                if (currentSlide > 1) {
+                    currentSlide--;
+                    loadSlide(currentSlide);
+                }
+            }
+
+            nextBtn.addEventListener('click', showNextSlide);
+            prevBtn.addEventListener('click', showPrevSlide);
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowRight') {
+                    showNextSlide();
+                }
+                if (event.key === 'ArrowLeft') {
+                    showPrevSlide();
+                }
+            });
+
+            // Cargar la primera diapositiva al iniciar
+            loadSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
