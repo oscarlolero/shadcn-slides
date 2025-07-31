@@ -1,31 +1,57 @@
 <div class="slide-header">
-    <h1 class="slide-title">Conclusiones</h1>
-    <p class="slide-subtitle">Próximos pasos y recomendaciones</p>
+    <h1 class="slide-title">Estrategia de Migración</h1>
+    <p class="slide-subtitle">Cómo hacer la transición sin dolor</p>
 </div>
 <div class="slide-content">
-    <div class="comparison-grid">
-        <div class="comparison-card">
-            <div class="card-title" style="color: #667eea;">🎯 Conclusiones clave</div>
-            <ul>
-                <li>shadcn/ui ofrece mayor flexibilidad y control</li>
-                <li>Mejor rendimiento y menor tamaño de bundle</li>
-                <li>Personalización ilimitada con Tailwind CSS</li>
-                <li>Código fuente completamente accesible</li>
-            </ul>
+    <div class="migration-timeline">
+        <div class="timeline-item">
+            <div class="timeline-number">1</div>
+            <div>
+                <h4>Setup inicial (Semana 1)</h4>
+                <p>Configurar shadcn/ui, Tailwind, y herramientas necesarias. Crear design tokens que matcheen el nuevo diseño.</p>
+            </div>
         </div>
-
-        <div class="comparison-card">
-            <div class="card-title" style="color: #10b981;">🚀 Próximos pasos</div>
-            <ul>
-                <li>Crear un proyecto piloto</li>
-                <li>Capacitar al equipo en Tailwind CSS</li>
-                <li>Desarrollar un plan de migración gradual</li>
-                <li>Establecer métricas de éxito</li>
-            </ul>
+        <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <div>
+                <h4>Componentes básicos (Semana 2-3)</h4>
+                <p>Migrar Button, Input, Card, Modal. Crear variantes que necesitemos para el rediseño.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <div>
+                <h4>Componentes complejos (Semana 4-5)</h4>
+                <p>Table, Form, DatePicker. Algunos pueden necesitar implementación custom o usar Radix UI directamente.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-number">4</div>
+            <div>
+                <h4>Migración gradual (Semana 6+)</h4>
+                <p>Migrar pantalla por pantalla. Coexistencia temporal entre ambas librerías.</p>
+            </div>
         </div>
     </div>
-    <div style="text-align: center; margin-top: 2rem;">
-        <h3 style="color: #667eea; margin-bottom: 1rem;">¿Preguntas?</h3>
-        <p style="font-size: 1.2rem;">Gracias por su atención</p>
+
+    <div class="demo-container">
+        <h3>Ejemplo de coexistencia</h3>
+        <div class="code-demo">
+<pre>// Durante la migración
+import { Button as AntButton } from 'antd'
+import { Button as ShadcnButton } from '@/components/ui/button'
+
+function MyComponent() {
+  return (
+    <div>
+      {/* Componente viejo */}
+      <AntButton type="primary">Ant Design</AntButton>
+      
+      {/* Componente nuevo */}
+      <ShadcnButton variant="default">shadcn/ui</ShadcnButton>
+    </div>
+  )
+}</pre>
+        </div>
     </div>
 </div>

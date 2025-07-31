@@ -1,27 +1,192 @@
 <div class="slide-header">
-    <h1 class="slide-title">¿Vale la pena el cambio?</h1>
-    <p class="slide-subtitle">Decisión basada en datos</p>
+    <h1 class="slide-title">🎨 Customización de Temas en ShadCN</h1>
+    <p class="slide-subtitle">Sistema de design tokens flexible y potente</p>
 </div>
 <div class="slide-content">
-    <div class="comparison-grid">
-        <div class="comparison-card">
-            <div class="card-title" style="color: #dc2626;">❌ No cambiar si...</div>
-            <ul>
-                <li>El rediseño es muy conservador</li>
-                <li>No tenemos tiempo para migración</li>
-                <li>El equipo no está cómodo con Tailwind</li>
-                <li>Necesitamos componentes muy específicos de Ant</li>
-            </ul>
+    <!-- CSS Variables y Dark Mode -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+        <!-- CSS Variables -->
+        <div class="feature-card" style="border-left-color: #fbbf24;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #fbbf24; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">🎯</div>
+                <h3 style="color: #fbbf24; margin: 0;">CSS Variables</h3>
+            </div>
+            <p>Sistema basado en variables CSS que permite cambios globales instantáneos en toda la aplicación.</p>
+            <div class="code-demo" style="margin-top: 1rem; font-size: 0.75rem;">
+<pre>:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --accent: 210 40% 96%;
+  --destructive: 0 84.2% 60.2%;
+  --border: 214.3 31.8% 91.4%;
+  --radius: 0.5rem;
+}</pre>
+            </div>
+        </div>
+        
+        <!-- Dark Mode -->
+        <div class="feature-card" style="border-left-color: #34d399;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #34d399; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">🌙</div>
+                <h3 style="color: #34d399; margin: 0;">Dark Mode Automático</h3>
+            </div>
+            <p>Modo oscuro que se activa simplemente redefiniendo las variables CSS. Sin código adicional.</p>
+            <div class="code-demo" style="margin-top: 1rem; font-size: 0.75rem;">
+<pre>.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --secondary: 217.2 32.6% 17.5%;
+  --accent: 217.2 32.6% 17.5%;
+  --destructive: 0 62.8% 30.6%;
+  --border: 217.2 32.6% 17.5%;
+}</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ejemplos de Personalización -->
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 12px; color: white; margin-bottom: 2rem;">
+        <h3 style="margin: 0 0 1.5rem 0; text-align: center;">Ejemplos de Personalización</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+            <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h4 style="color: #fbbf24; margin-bottom: 1rem;">🎨 Brand Colors</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Cambiar colores primarios para match con tu marca</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                    <div style="width: 30px; height: 30px; background: #3b82f6; border-radius: 6px;"></div>
+                    <div style="width: 30px; height: 30px; background: #10b981; border-radius: 6px;"></div>
+                    <div style="width: 30px; height: 30px; background: #f59e0b; border-radius: 6px;"></div>
+                </div>
+                <div class="code-demo" style="font-size: 0.7rem; text-align: left;">
+<pre>--primary: 221.2 83.2% 53.3%;
+--secondary: 210 40% 96%;</pre>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h4 style="color: #34d399; margin-bottom: 1rem;">📐 Border Radius</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Desde sharp hasta super rounded</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                    <div style="width: 30px; height: 30px; background: #64748b; border-radius: 0;"></div>
+                    <div style="width: 30px; height: 30px; background: #64748b; border-radius: 6px;"></div>
+                    <div style="width: 30px; height: 30px; background: #64748b; border-radius: 50%;"></div>
+                </div>
+                <div class="code-demo" style="font-size: 0.7rem; text-align: left;">
+<pre>--radius: 0rem;     /* Sharp */
+--radius: 0.5rem;   /* Default */
+--radius: 1rem;     /* Rounded */</pre>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h4 style="color: #a78bfa; margin-bottom: 1rem;">🎭 Themes</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Múltiples temas predefinidos</p>
+                <div style="margin-bottom: 1rem;">
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 6px; margin: 0.25rem; display: inline-block; font-size: 0.8rem;">Default</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 6px; margin: 0.25rem; display: inline-block; font-size: 0.8rem;">New York</span>
+                </div>
+                <div class="code-demo" style="font-size: 0.7rem; text-align: left;">
+<pre>npx shadcn-ui@latest init
+? Which style would you like to use? › Default
+? Which color would you like to use as base color? › Slate</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Implementación paso a paso -->
+    <div class="feature-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div class="feature-card" style="border-left-color: #3b82f6;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">⚡</div>
+                <h3 style="color: #3b82f6; margin: 0;">Implementación en 3 pasos</h3>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="background: #3b82f6; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">1</div>
+                    <p style="margin: 0; font-weight: 500;">Modificar variables CSS en globals.css</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="background: #10b981; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">2</div>
+                    <p style="margin: 0; font-weight: 500;">Configurar tailwind.config.js</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="background: #f59e0b; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">3</div>
+                    <p style="margin: 0; font-weight: 500;">¡Listo! Todos los componentes se actualizan</p>
+                </div>
+            </div>
+
+            <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                <h5 style="color: #3b82f6; margin: 0 0 0.5rem 0;">Ventajas del sistema:</h5>
+                <ul style="margin: 0; font-size: 0.85rem; color: #666;">
+                    <li>Cambios globales instantáneos</li>
+                    <li>Consistencia automática</li>
+                    <li>Sin rebuild necesario</li>
+                    <li>Compatible con cualquier framework</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="comparison-card">
-            <div class="card-title" style="color: #16a34a;">✅ Cambiar si...</div>
-            <ul>
-                <li>El rediseño requiere personalización profunda</li>
-                <li>Queremos mejor performance</li>
-                <li>Valoramos el control total del código</li>
-                <li>Buscamos reducir dependencias externas</li>
-            </ul>
+        <div class="feature-card" style="border-left-color: #ef4444;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">🔥</div>
+                <h3 style="color: #ef4444; margin: 0;">Casos de uso avanzados</h3>
+            </div>
+            
+            <h4 style="color: #666; margin-bottom: 0.5rem;">Multi-tenant theming:</h4>
+            <div class="code-demo" style="margin-bottom: 1rem; font-size: 0.75rem;">
+<pre>[data-theme="company-a"] {
+  --primary: 220 100% 50%;
+}
+
+[data-theme="company-b"] {
+  --primary: 142 76% 36%;
+}</pre>
+            </div>
+
+            <h4 style="color: #666; margin-bottom: 0.5rem;">Theming dinámico:</h4>
+            <div class="code-demo" style="margin-bottom: 1rem; font-size: 0.75rem;">
+<pre>const setTheme = (colors) => {
+  Object.entries(colors).forEach(([key, value]) => {
+    document.documentElement.style
+      .setProperty(`--${key}`, value);
+  });
+};</pre>
+            </div>
+
+            <div style="background: #fef2f2; padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                <h5 style="color: #ef4444; margin: 0 0 0.5rem 0;">Casos reales:</h5>
+                <ul style="margin: 0; font-size: 0.85rem; color: #666;">
+                    <li>White-label products</li>
+                    <li>A/B testing de temas</li>
+                    <li>Preferencias de usuario</li>
+                    <li>Temas estacionales</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resultado final -->
+    <div class="benefits" style="margin-top: 2rem; text-align: center;">
+        <h3 style="color: #667eea; margin-bottom: 1rem;">Resultado: Sistema de temas profesional sin complejidad</h3>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="stat-item">
+                <span class="stat-number" style="color: #10b981;">1</span>
+                <p>archivo para cambiar todo</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" style="color: #10b981;">∞</span>
+                <p>posibilidades de theming</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" style="color: #10b981;">0</span>
+                <p>JavaScript requerido</p>
+            </div>
         </div>
     </div>
 </div>

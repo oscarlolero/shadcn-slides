@@ -1,57 +1,148 @@
 <div class="slide-header">
-    <h1 class="slide-title">Estrategia de Migración</h1>
-    <p class="slide-subtitle">Cómo hacer la transición sin dolor</p>
+    <h1 class="slide-title">Modal Customization: Ant Design vs ShadCN</h1>
+    <p class="slide-subtitle">Comparativa práctica de personalización de modales</p>
 </div>
 <div class="slide-content">
-    <div class="migration-timeline">
-        <div class="timeline-item">
-            <div class="timeline-number">1</div>
-            <div>
-                <h4>Setup inicial (Semana 1)</h4>
-                <p>Configurar shadcn/ui, Tailwind, y herramientas necesarias. Crear design tokens que matcheen el nuevo diseño.</p>
+    <div class="comparison-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+        
+        <!-- Ant Design Modal -->
+        <div class="feature-card" style="border-left-color: #1890ff;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #1890ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">A</div>
+                <h3 style="color: #1890ff; margin: 0;">Ant Design Modal</h3>
+            </div>
+            
+            <h4 style="color: #666; margin-bottom: 0.5rem;">Implementación básica:</h4>
+            <div class="code-demo" style="margin-bottom: 1rem; font-size: 0.75rem;">
+<pre>&lt;Modal
+  title="Título del Modal"
+  open={isModalOpen}
+  onOk={handleOk}
+  onCancel={handleCancel}
+  okText="Confirmar"
+  cancelText="Cancelar"
+&gt;
+  &lt;p&gt;Contenido del modal&lt;/p&gt;
+&lt;/Modal&gt;</pre>
+            </div>
+
+            <h4 style="color: #666; margin-bottom: 0.5rem;">Personalización limitada:</h4>
+            <div class="code-demo" style="margin-bottom: 1rem; font-size: 0.75rem;">
+<pre>&lt;Modal
+  className="custom-modal"
+  bodyStyle={{
+    padding: '24px',
+    background: '#f5f5f5'
+  }}
+  maskStyle={{
+    backgroundColor: 'rgba(0,0,0,0.8)'
+  }}
+&gt;</pre>
+            </div>
+
+            <div style="background: #fff2f0; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff4d4f;">
+                <h5 style="color: #ff4d4f; margin: 0 0 0.5rem 0;">Limitaciones:</h5>
+                <ul style="margin: 0; font-size: 0.85rem; color: #666;">
+                    <li>CSS específico requerido</li>
+                    <li>Estructura HTML fija</li>
+                    <li>Estilos globales conflictivos</li>
+                    <li>Difícil personalización profunda</li>
+                </ul>
             </div>
         </div>
-        <div class="timeline-item">
-            <div class="timeline-number">2</div>
-            <div>
-                <h4>Componentes básicos (Semana 2-3)</h4>
-                <p>Migrar Button, Input, Card, Modal. Crear variantes que necesitemos para el rediseño.</p>
+
+        <!-- ShadCN Modal -->
+        <div class="feature-card" style="border-left-color: #10b981;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 50px; height: 50px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">S</div>
+                <h3 style="color: #10b981; margin: 0;">ShadCN Dialog</h3>
             </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-number">3</div>
-            <div>
-                <h4>Componentes complejos (Semana 4-5)</h4>
-                <p>Table, Form, DatePicker. Algunos pueden necesitar implementación custom o usar Radix UI directamente.</p>
+            
+            <h4 style="color: #666; margin-bottom: 0.5rem;">Implementación composable:</h4>
+            <div class="code-demo" style="margin-bottom: 1rem; font-size: 0.75rem;">
+<pre>&lt;Dialog open={isOpen} onOpenChange={setIsOpen}&gt;
+  &lt;DialogTrigger asChild&gt;
+    &lt;Button&gt;Abrir Modal&lt;/Button&gt;
+  &lt;/DialogTrigger&gt;
+  &lt;DialogContent&gt;
+    &lt;DialogHeader&gt;
+      &lt;DialogTitle&gt;Título&lt;/DialogTitle&gt;
+    &lt;/DialogHeader&gt;
+    &lt;p&gt;Contenido personalizable&lt;/p&gt;
+  &lt;/DialogContent&gt;
+&lt;/Dialog&gt;</pre>
             </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-number">4</div>
-            <div>
-                <h4>Migración gradual (Semana 6+)</h4>
-                <p>Migrar pantalla por pantalla. Coexistencia temporal entre ambas librerías.</p>
+
+            <h4 style="color: #666; margin-bottom: 0.5rem;">Personalización total:</h4>
+            <div class="code-demo" style="margin-bottom: 1rem; font-size: 0.75rem;">
+<pre>&lt;DialogContent className="sm:max-w-md"&gt;
+  &lt;div className="flex items-center space-x-2"&gt;
+    &lt;div className="grid flex-1 gap-2"&gt;
+      &lt;Label htmlFor="link"&gt;Link&lt;/Label&gt;
+      &lt;Input id="link" defaultValue="..." /&gt;
+    &lt;/div&gt;
+    &lt;Button size="sm" className="px-3"&gt;
+      &lt;Copy className="h-4 w-4" /&gt;
+    &lt;/Button&gt;
+  &lt;/div&gt;
+&lt;/DialogContent&gt;</pre>
+            </div>
+
+            <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                <h5 style="color: #10b981; margin: 0 0 0.5rem 0;">Ventajas:</h5>
+                <ul style="margin: 0; font-size: 0.85rem; color: #666;">
+                    <li>Composición flexible</li>
+                    <li>Tailwind CSS nativo</li>
+                    <li>Accesibilidad incluida</li>
+                    <li>Control total del markup</li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <div class="demo-container">
-        <h3>Ejemplo de coexistencia</h3>
-        <div class="code-demo">
-<pre>// Durante la migración
-import { Button as AntButton } from 'antd'
-import { Button as ShadcnButton } from '@/components/ui/button'
-
-function MyComponent() {
-  return (
-    <div>
-      {/* Componente viejo */}
-      <AntButton type="primary">Ant Design</AntButton>
-      
-      {/* Componente nuevo */}
-      <ShadcnButton variant="default">shadcn/ui</ShadcnButton>
+    <!-- Ejemplo práctico -->
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 12px; color: white; margin-top: 2rem;">
+        <h3 style="margin: 0 0 1rem 0; text-align: center;">Ejemplo: Modal de Confirmación Personalizado</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+            <div>
+                <h4 style="color: #fbbf24; margin-bottom: 0.5rem;">Con Ant Design:</h4>
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; font-size: 0.8rem;">
+                    <p>• Requiere CSS custom para colores</p>
+                    <p>• bodyStyle para padding personalizado</p>
+                    <p>• className global para estilos</p>
+                    <p>• Conflictos con tema existente</p>
+                </div>
+            </div>
+            
+            <div>
+                <h4 style="color: #34d399; margin-bottom: 0.5rem;">Con ShadCN:</h4>
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; font-size: 0.8rem;">
+                    <p>• Clases Tailwind directas</p>
+                    <p>• Composición de componentes</p>
+                    <p>• Variantes predefinidas</p>
+                    <p>• Consistencia automática</p>
+                </div>
+            </div>
+        </div>
     </div>
-  )
-}</pre>
+
+    <!-- Resultado final -->
+    <div class="benefits" style="margin-top: 2rem; text-align: center;">
+        <h3 style="color: #667eea; margin-bottom: 1rem;">Resultado: 70% menos código CSS personalizado</h3>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="stat-item">
+                <span class="stat-number" style="color: #10b981;">5min</span>
+                <p>tiempo de implementación</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" style="color: #10b981;">100%</span>
+                <p>accesibilidad incluida</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" style="color: #10b981;">0</span>
+                <p>CSS conflicts</p>
+            </div>
         </div>
     </div>
 </div>
